@@ -1,0 +1,12 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Query {
+  """Retorna el string hola mundo"""
+  HelloMethod: String!
+  randomNumber: Float!
+
+  """Retorna el numero entre 0 y t (default 6)"""
+  randomNumberFromZeroTo(to: Int): Int!
+}
