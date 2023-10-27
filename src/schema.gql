@@ -2,6 +2,12 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Todo {
+  id: Int!
+  description: String!
+  done: Boolean!
+}
+
 type Query {
   """Retorna el string hola mundo"""
   HelloMethod: String!
@@ -9,4 +15,27 @@ type Query {
 
   """Retorna el numero entre 0 y t (default 6)"""
   randomNumberFromZeroTo(to: Int): Int!
+  todos: [Todo!]!
+  todo(id: Int!): Todo!
+}
+
+type Mutation {
+  createTodo(createTodoInput: CreateTodoInput!): Todo!
+  updateTodo(updateTodoInput: UpdateTodoInput!): Todo!
+  deleteTodo(id: Int!): Boolean!
+}
+
+input CreateTodoInput {
+  """Tarea que necesita ser realizada"""
+  description: String!
+}
+
+input UpdateTodoInput {
+  id: Int!
+
+  """Tarea que necesita ser realizada"""
+  description: String
+
+  """Tarea que necesita ser realizada"""
+  done: Boolean
 }

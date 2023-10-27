@@ -4,6 +4,7 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
 import { HolaMundoModule } from './hola-mundo/hola-mundo.module';
+import { TodoModule } from './todo/todo.module';
 
 
 
@@ -17,7 +18,7 @@ import { HolaMundoModule } from './hola-mundo/hola-mundo.module';
             playground: false,
             plugins: [ApolloServerPluginLandingPageLocalDefault()],
         }),
-        HolaMundoModule,],
+        HolaMundoModule, TodoModule],
     controllers: [],
     providers: [],
 })
